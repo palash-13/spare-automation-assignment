@@ -23,9 +23,10 @@ Get a free developer token at https://www.producthunt.com/v2/oauth/applications 
 ## Running the suites
 ```bash
 bun run test:api          # API tests (Bun test runner)
+bun run test:api:report   # API tests + HTML report → reports/api-report.html
 bun run test:e2e          # E2E tests (headless Chromium)
 bun run test:e2e:headed   # watch the browser
-bun run report            # open the last Playwright HTML report
+bun run report            # open the last Playwright HTML report (playwright-report/)
 bun run typecheck         # tsc --noEmit (strict)
 bun run test              # everything
 ```

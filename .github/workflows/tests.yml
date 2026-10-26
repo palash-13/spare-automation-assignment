@@ -17,9 +17,15 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run typecheck
-      - run: bun run test:api
+      - run: bun run test:api:report
         env:
           PH_TOKEN: ${{ secrets.PH_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: api-report
+          path: reports/
+          retention-days: 14
 
   e2e:
     runs-on: ubuntu-latest

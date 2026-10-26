@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "test:api": "bun test api",
+    "test:api:report": "bun scripts/api-report.ts",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
-    "test": "bun run test:api && bun run test:e2e",
+    "test": "bun run test:api:report && bun run test:e2e",
     "report": "playwright show-report",
     "typecheck": "tsc --noEmit"
   },
